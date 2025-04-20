@@ -9,9 +9,8 @@ class AppColors {
   static const blue400 = Color(0xFF5C91F2);
   static const blue500 = Color(0xFF0A5AEB);
   static const blue600 = Color(0xFF084BC4);
-  //blue600 ama blue700 nya emg sama kah?
-  static const blue700 = Color(0xFF084BC4);
-  static const blue800 = Color(0xFF073C9D);
+  static const blue700 = Color(0xFF073C9D);
+  static const blue800 = Color(0xFF052D76);
   static const blue900 = Color(0xFF031E4E);
 
   // Orange
@@ -29,9 +28,8 @@ class AppColors {
   static const gray100 = Color(0xFFD3D4D4);
   static const gray200 = Color(0xFFB5B7B8);
   static const gray300 = Color(0xFF6B6F70);
-  static const gray400 = Color(0xFF464B4D);
-  // gray400 ama gray500 nya jg sama?
-  static const gray500 = Color(0xFF464B4D);
+  static const gray400 = Color(0xFF6B6F70);
+  static const gray500 = Color(0xFF848788);
   static const gray600 = Color(0xFF212729);
   static const gray700 = Color(0xFF1C2122);
   static const gray800 = Color(0xFF161A1B);

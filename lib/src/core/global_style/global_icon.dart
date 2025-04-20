@@ -1,61 +1,75 @@
 import 'package:flutter/material.dart';
 
-class AppIcons {
-  // Ukuran ikon standar
-  static const double iconSizeSmall = 16.0;
-  static const double iconSizeMedium = 24.0;
-  static const double iconSizeLarge = 32.0;
-  static const double iconSizeExtraLarge = 48.0;
+/// A global icon component that provides consistent icon rendering
+/// across the app with predefined variants based on the design system.
+class GlobalIcon extends StatelessWidget {
+  final IconVariant variant; // Jenis ikon berdasarkan enum
+  final IconType type; // Tipe ikon (active/disable)
+  final double size; // Ukuran ikon
+  final Color? color; // Warna overlay opsional
 
-  // Ikon umum yang digunakan di seluruh aplikasi
-  static const IconData home = Icons.home_outlined;
-  static const IconData homeFilled = Icons.home;
-  static const IconData search = Icons.search;
-  static const IconData settings = Icons.settings_outlined;
-  static const IconData settingsFilled = Icons.settings;
-  static const IconData profile = Icons.person_outline;
-  static const IconData profileFilled = Icons.person;
-  static const IconData notification = Icons.notifications_none;
-  static const IconData notificationFilled = Icons.notifications;
-  static const IconData back = Icons.arrow_back;
-  static const IconData forward = Icons.arrow_forward;
-  static const IconData menu = Icons.menu;
-  static const IconData close = Icons.close;
-  static const IconData add = Icons.add;
-  static const IconData remove = Icons.remove;
-  static const IconData check = Icons.check;
-  static const IconData error = Icons.error_outline;
-  
-  // Ikon khusus aplikasi (bisa ditambahkan sesuai kebutuhan)
-  static const IconData logo = Icons.account_circle; // Ganti dengan ikon logo khusus
-  static const IconData premium = Icons.star;
-  static const IconData premiumFilled = Icons.star_rate;
-  static const IconData download = Icons.download;
-  static const IconData share = Icons.share;
-}
-
-class AppIcon extends StatelessWidget{
-  final IconData icon;
-  final double? size;
-  final Color? color;
-  final String? semanticLabel;
-
-  const AppIcon({
-    Key? key,
-    required this.icon,
-    this.size,
+  const GlobalIcon({
+    super.key,
+    required this.variant,
+    required this.type,
+    this.size = 24.0,
     this.color,
-    this.semanticLabel,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Icon(
-      icon,
-      size: size ?? AppIcons.iconSizeMedium,
-      color: color ?? Theme.of(context).iconTheme.color,
-      semanticLabel: semanticLabel,
+    return Image.asset(
+      _getIconPath(),
+      width: size,
+      height: size,
+      color: color,
+      fit: BoxFit.contain,
+      errorBuilder: (context, error, stackTrace) {
+        // Placeholder untuk ikon yang tidak ditemukan
+        return Icon(
+          Icons.error,
+          size: size,
+          color: color ?? Colors.red,
+        );
+      },
     );
+  }
+
+  /// Mengembalikan path ikon berdasarkan jenis dan tipe
+  String _getIconPath() {
+    final String state = type == IconType.active ? 'active' : 'disable';
+    switch (variant) {
+      case IconVariant.calendarItem:
+        return 'assets/images/calendar-item/$state.png';
+      case IconVariant.historyIcon:
+        return 'assets/images/history-icon/$state.png';
+      case IconVariant.homeIcon:
+        return 'assets/images/home-icon/$state.png';
+      case IconVariant.inbox:
+        return 'assets/images/inbox/$state.png';
+      case IconVariant.profileIcon:
+        return 'assets/images/profile-icon/$state.png';
+      case IconVariant.setoranIcon:
+        return 'assets/images/setoran-icon/$state.png';
+      case IconVariant.trendIcon:
+        return 'assets/images/trend-icon/$state.png';
+    }
   }
 }
 
+/// Enum untuk semua jenis ikon yang tersedia dalam aplikasi
+enum IconVariant {
+  calendarItem,
+  historyIcon,
+  homeIcon,
+  inbox,
+  profileIcon,
+  setoranIcon,
+  trendIcon,
+}
+
+/// Enum untuk menentukan tipe ikon (active atau disable)
+enum IconType {
+  active,
+  disable,
+}

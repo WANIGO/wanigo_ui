@@ -87,6 +87,7 @@ class GlobalModal extends StatelessWidget {
               text: primaryButtonText,
               onPressed: onPrimaryButtonPressed,
               isFullWidth: true,
+              variant: ButtonVariant.medium, // Tambahkan varian
             ),
             if (secondaryButtonText != null) ...[
               SizedBox(height: gap ?? 9.28.h),
@@ -98,6 +99,7 @@ class GlobalModal extends StatelessWidget {
                 backgroundColor: Colors.white,
                 textColor: Colors.blue,
                 borderRadius: BorderRadius.circular(10.r),
+                variant: ButtonVariant.small, // Tambahkan varian
               ),
             ],
           ],

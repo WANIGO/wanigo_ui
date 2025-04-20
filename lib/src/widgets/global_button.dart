@@ -2,18 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wanigo_ui/src/texts/global_text.dart';
 
-
 /// A global button component that provides consistent button styling
 /// based on the design system.
 class GlobalButton extends StatelessWidget {
   final String text;
   final VoidCallback? onPressed;
+  final ButtonVariant variant;
   final bool isLoading;
   final bool isFullWidth;
   final Color? backgroundColor;
   final Color? textColor;
-  final double? width;
-  final double? height;
   final BorderRadius? borderRadius;
   final EdgeInsets? padding;
   final TextVariant textVariant;
@@ -25,13 +23,12 @@ class GlobalButton extends StatelessWidget {
   const GlobalButton({
     super.key,
     required this.text,
+    required this.variant,
     this.onPressed,
     this.isLoading = false,
     this.isFullWidth = true,
     this.backgroundColor,
     this.textColor,
-    this.width,
-    this.height,
     this.borderRadius,
     this.padding,
     this.textVariant = TextVariant.mediumSemiBold,
@@ -43,9 +40,28 @@ class GlobalButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Determine size based on variant
+    final double? width;
+    final double? height;
+
+    switch (variant) {
+      case ButtonVariant.small:
+        width = isFullWidth ? 200.w : null;
+        height = 36.h;
+        break;
+      case ButtonVariant.medium:
+        width = isFullWidth ? 300.w : null;
+        height = 48.h;
+        break;
+      case ButtonVariant.large:
+        width = isFullWidth ? 400.w : null;
+        height = 56.h;
+        break;
+    }
+
     return SizedBox(
-      width: width ?? 353.w,
-      height: height ?? 48.h,
+      width: width,
+      height: height,
       child: ElevatedButton(
         onPressed: disabled || isLoading ? null : onPressed,
         style: ElevatedButton.styleFrom(
@@ -53,8 +69,7 @@ class GlobalButton extends StatelessWidget {
           disabledBackgroundColor: backgroundColor != null
               ? backgroundColor!.withOpacity(0.5)
               : const Color(0xFF0A5AEB).withOpacity(0.5),
-          padding:
-              padding ?? EdgeInsets.symmetric(vertical: 8.h, horizontal: 16.w),
+          padding: padding ?? EdgeInsets.symmetric(vertical: 8.h, horizontal: 16.w),
           shape: RoundedRectangleBorder(
             borderRadius: borderRadius ?? BorderRadius.circular(10.r),
           ),
@@ -88,4 +103,11 @@ class GlobalButton extends StatelessWidget {
       ),
     );
   }
+}
+
+/// Enum for button size variants
+enum ButtonVariant {
+  small,
+  medium,
+  large,
 }
