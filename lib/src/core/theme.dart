@@ -19,7 +19,7 @@ class AppTheme {
           text: '',
           variant: TextVariant.mediumSemiBold,
           color: Colors.white,
-        ).buildTextStyle(),
+        ).getTextStyle(), // Ubah ke method public
       ),
     ),
     iconTheme: IconThemeData(
@@ -33,13 +33,14 @@ class AppTheme {
         text: '',
         variant: TextVariant.h6,
         color: Colors.white,
-      ).buildTextStyle(),
+      ).getTextStyle(), // Ubah ke method public
     ),
   );
 }
 
-extension GlobalTextExtension on GlobalText {
-  TextStyle buildTextStyle() {
-    return _getTextStyle();
-  }
-}
+// Jangan gunakan extension ini, karena tidak diperlukan lagi
+// extension GlobalTextExtension on GlobalText {
+//   TextStyle buildTextStyle() {
+//     return _getTextStyle();
+//   }
+// }

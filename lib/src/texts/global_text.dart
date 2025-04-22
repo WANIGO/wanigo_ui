@@ -27,7 +27,7 @@ class GlobalText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: _getTextStyle().copyWith(decoration: decoration),
+      style: getTextStyle().copyWith(decoration: decoration),
       textAlign: textAlign,
       maxLines: maxLines,
       overflow: overflow,
@@ -35,7 +35,7 @@ class GlobalText extends StatelessWidget {
     );
   }
 
-  TextStyle _getTextStyle() {
+  TextStyle getTextStyle() {
     switch (variant) {
       // Heading variants
       case TextVariant.h1:
@@ -112,6 +112,22 @@ class GlobalText extends StatelessWidget {
           fontWeight: FontWeight.w600,
           color: color,
         );
+      case TextVariant.xSmallBold:
+        return TextStyle(
+          fontFamily: 'NunitoSans',
+          fontSize: 12.sp,
+          height: 1.29, // 15.5/12 = 1.29
+          fontWeight: FontWeight.w700,
+          color: color,
+        );
+      case TextVariant.xSmallExtraBold:
+        return TextStyle(
+          fontFamily: 'NunitoSans',
+          fontSize: 12.sp,
+          height: 1.29, // 15.5/12 = 1.29
+          fontWeight: FontWeight.w800,
+          color: color,
+        );
 
       // Body variants - Small
       case TextVariant.smallRegular:
@@ -136,6 +152,22 @@ class GlobalText extends StatelessWidget {
           fontSize: 14.sp,
           height: 1.29, // 18/14 = 1.29
           fontWeight: FontWeight.w600,
+          color: color,
+        );
+      case TextVariant.smallBold:
+        return TextStyle(
+          fontFamily: 'NunitoSans',
+          fontSize: 14.sp,
+          height: 1.29, // 18/14 = 1.29
+          fontWeight: FontWeight.w700,
+          color: color,
+        );
+      case TextVariant.smallExtraBold:
+        return TextStyle(
+          fontFamily: 'NunitoSans',
+          fontSize: 14.sp,
+          height: 1.29, // 18/14 = 1.29
+          fontWeight: FontWeight.w800,
           color: color,
         );
 
@@ -164,6 +196,22 @@ class GlobalText extends StatelessWidget {
           fontWeight: FontWeight.w600,
           color: color,
         );
+      case TextVariant.mediumBold:
+        return TextStyle(
+          fontFamily: 'NunitoSans',
+          fontSize: 16.sp,
+          height: 1.25, // 20/16 = 1.25
+          fontWeight: FontWeight.w700,
+          color: color,
+        );
+      case TextVariant.mediumExtraBold:
+        return TextStyle(
+          fontFamily: 'NunitoSans',
+          fontSize: 16.sp,
+          height: 1.25, // 20/16 = 1.25
+          fontWeight: FontWeight.w800,
+          color: color,
+        );
 
       // Body variants - Large
       case TextVariant.largeRegular:
@@ -190,6 +238,22 @@ class GlobalText extends StatelessWidget {
           fontWeight: FontWeight.w600,
           color: color,
         );
+      case TextVariant.largeBold:
+        return TextStyle(
+          fontFamily: 'NunitoSans',
+          fontSize: 18.sp,
+          height: 1.28, // 23/18 = 1.28
+          fontWeight: FontWeight.w700,
+          color: color,
+        );
+      case TextVariant.largeExtraBold:
+        return TextStyle(
+          fontFamily: 'NunitoSans',
+          fontSize: 18.sp,
+          height: 1.28, // 23/18 = 1.28
+          fontWeight: FontWeight.w800,
+          color: color,
+        );
     }
   }
 }
@@ -208,19 +272,27 @@ enum TextVariant {
   xSmallRegular,
   xSmallMedium,
   xSmallSemiBold,
+  xSmallBold,
+  xSmallExtraBold,
 
   // Body variants - Small (14/18)
   smallRegular,
   smallMedium,
   smallSemiBold,
+  smallBold,
+  smallExtraBold,
 
   // Body variants - Medium (16/20)
   mediumRegular,
   mediumMedium,
   mediumSemiBold,
+  mediumBold,
+  mediumExtraBold,
 
   // Body variants - Large (18/23)
   largeRegular,
   largeMedium,
   largeSemiBold,
+  largeBold,
+  largeExtraBold,
 }
