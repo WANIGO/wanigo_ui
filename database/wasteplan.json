@@ -1,0 +1,17 @@
+{
+    "waste_plans": [
+      {
+        "id": "1",
+        "type": 1,
+        "start_date": "2025-03-30",
+        "frequency": 1,
+        "starting_hours": 2
+      },
+      {
+        "id": "2", 
+        "type": 2,
+        "plan_date": "2025-04-15",
+        "starting_hours": 3
+      }
+    ]
+  }

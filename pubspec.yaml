@@ -1,0 +1,50 @@
+name: wanigo_part
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  table_calendar: ^3.0.0
+  gap: ^3.0.1
+  intl: ^0.18.1  # Added for date formatting
+  path: ^1.8.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Adding the assets section for the background image
+  assets:
+    - assets/icons/add_calendar1.png
+    - assets/icons/box_recycle.png
+    - assets/icons/calendar_icon.png
+    - assets/icons/month_arrow.png
+    - assets/icons/plan_typebg.png
+    - assets/icons/plan_typebox.png
+    - assets/icons/trash_recycle.png
+    - assets/icons/WANIGO_logo.png
+
+  # Adding Nunito font
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-Regular.ttf
+        - asset: assets/fonts/Nunito-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Nunito-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Nunito-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Nunito-Light.ttf
+          weight: 300
