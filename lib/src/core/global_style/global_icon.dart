@@ -40,19 +40,19 @@ class GlobalIcon extends StatelessWidget {
     final String state = type == IconType.active ? 'active' : 'disable';
     switch (variant) {
       case IconVariant.calendarItem:
-        return 'assets/images/calendar-item/$state.png';
+        return 'packages/wanigo_ui/assets/images/calendar-item/$state.png';
       case IconVariant.historyIcon:
-        return 'assets/images/history-icon/$state.png';
+        return 'packages/wanigo_ui/assets/images/history-icon/$state.png';
       case IconVariant.homeIcon:
-        return 'assets/images/home-icon/$state.png';
+        return 'packages/wanigo_ui/assets/images/home-icon/$state.png';
       case IconVariant.inbox:
-        return 'assets/images/inbox/$state.png';
+        return 'packages/wanigo_ui/assets/images/inbox/$state.png';
       case IconVariant.profileIcon:
-        return 'assets/images/profile-icon/$state.png';
+        return 'packages/wanigo_ui/assets/images/profile-icon/$state.png';
       case IconVariant.setoranIcon:
-        return 'assets/images/setoran-icon/$state.png';
+        return 'packages/wanigo_ui/assets/images/setoran-icon/$state.png';
       case IconVariant.trendIcon:
-        return 'assets/images/trend-icon/$state.png';
+        return 'packages/wanigo_ui/assets/images/trend-icon/$state.png';
     }
   }
 }
