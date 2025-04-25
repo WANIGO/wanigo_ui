@@ -28,7 +28,7 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       leadingWidth: kToolbarHeight,
       title: Image.asset(
-        'assets/images/appbar-logo.webp',
+        'packages/wanigo_ui/assets/images/appbar-logo.webp',
         height: 25.h,
         fit: BoxFit.contain,
       ),
