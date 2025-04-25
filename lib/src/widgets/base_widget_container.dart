@@ -83,7 +83,7 @@ class BaseWidgetContainer extends StatelessWidget {
             : body,
         resizeToAvoidBottomInset: resizeToAvoidBottomInset,
         floatingActionButton: floatingActionButton,
-        backgroundColor: backgroundColor ?? const Color(0xFFEAFAEA),
+        backgroundColor: backgroundColor ?? const Color(0xFFFFFFFF),
         bottomNavigationBar: bottomNavigationBar,
         bottomSheet: bottomSheet,
         drawer: drawer,
